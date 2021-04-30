@@ -9,7 +9,17 @@ import java.util.Scanner;
 
 public class AppService {
     protected static Scanner scanner = new Scanner(System.in);
+    private static AppService instance = null;
     int select;
+
+    private AppService(){}
+
+    public static AppService getInstance(){
+        if (instance == null) {
+            instance = new AppService();
+        }
+        return instance;
+    }
 
     public void showMenu(App app){
         while (true) {
@@ -30,12 +40,12 @@ public class AppService {
 
                     if(loginChoice.equals("Customer")){
                         Account account = this.findCustomer(username,password, app.getCostumers());
-                        CustomerService customerService= new CustomerService();
+                        CustomerService customerService= CustomerService.getInstance();
                         customerService.showMenuCustomer((Customer) account, app);
                     }
                     else if(loginChoice.equals("Courier")){
                         Account account = this.findCourier(username,password, app.getCouriers());
-                        CourierService courierService = new CourierService();
+                        CourierService courierService = CourierService.getInstance();
                         courierService.showMenuCourier((Courier) account, app);
                     }
                     else {

@@ -6,20 +6,20 @@ public class Restaurant {
     private String name;
     private Menu menu;
     private String sector;
-    private int price_lvl; //1-4
+    private int priceLvl; //1-4
 
-    public Restaurant(String name, Menu menu,String sector, int price_lvl) {
+    public Restaurant(String name, Menu menu,String sector, int priceLvl) {
         current_id+=1;
         this.id=current_id;
         this.menu = menu;
         this.name = name;
         this.sector=sector;
-        this.price_lvl=price_lvl;
+        this.priceLvl=priceLvl;
     }
 
     @Override
     public String toString() {
-        return name + " Restaurant" + '\n' + "Sector: " + sector + " Price Level: " + price_lvl;
+        return name + " Restaurant" + '\n' + "Sector: " + sector + " Price Level: " + priceLvl;
     }
 
     public int getId() {
@@ -54,11 +54,11 @@ public class Restaurant {
         this.sector = sector;
     }
 
-    public int getPrice_lvl() {
-        return price_lvl;
+    public int getPriceLvl() {
+        return priceLvl;
     }
 
-    public void setPrice_lvl(int price_lvl) {
-        this.price_lvl = price_lvl;
+    public void setPriceLvl(int priceLvl) {
+        this.priceLvl = priceLvl;
     }
 }

@@ -20,7 +20,7 @@ public class Item {
         if (this == x) {
             return true;
         }
-        if (x == null || getClass() != x.getClass()) {
+        if (x == null || x instanceof Item) {
             return false;
         }
         Item item = (Item) x;

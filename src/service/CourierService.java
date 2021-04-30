@@ -6,7 +6,19 @@ import model.user.Courier;
 
 import java.util.Scanner;
 
-public class CourierService extends AppService{
+public class CourierService{
+    private AppService appService = AppService.getInstance();
+    private static CourierService instance = null;
+
+    private CourierService(){}
+
+    public static CourierService getInstance(){
+        if (instance == null) {
+            instance = new CourierService();
+        }
+        return instance;
+    }
+
     public void showMenuCourier(Courier courier, App app){
 
         Scanner sc = new Scanner(System.in);
@@ -27,15 +39,15 @@ public class CourierService extends AppService{
                     }
                     break;
                 case 2:
-                    System.out.println("Your commision is "+ courier.getCommission_per_order());
+                    System.out.println("Your commision is "+ courier.getcommissionPerOrder());
                     break;
                 case 3:
-                    showMenu(app);
+                    appService.showMenu(app);
                     break;
                 case 4:
                     app.getCouriers().remove(courier);
                     System.out.println("Account deleted.");
-                    showMenu(app);
+                    appService.showMenu(app);
                 default:
                     System.out.println("That is not a valid option.");
             }

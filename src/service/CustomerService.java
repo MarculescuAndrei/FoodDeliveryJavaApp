@@ -13,7 +13,19 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
-public class CustomerService extends AppService {
+public class CustomerService {
+    private AppService appService = AppService.getInstance();
+
+    private static CustomerService instance = null;
+
+    private CustomerService(){}
+
+    public static CustomerService getInstance(){
+        if (instance == null) {
+            instance = new CustomerService();
+        }
+        return instance;
+    }
     public void showMenuCustomer(Customer customer, App app) {
         Scanner scanner = new Scanner(System.in);
 
@@ -67,12 +79,12 @@ public class CustomerService extends AppService {
                     System.out.println("The order will arrive from " + selectedRestaurant.getSector() + ", delivered by " + designatedCourier.getUsername());
                     break;
                 case 3:
-                    showMenu(app);
+                    appService.showMenu(app);
                     break;
                 case 4:
                     app.getCostumers().remove(customer);
                     System.out.println("Account deleted.");
-                    showMenu(app);
+                    appService.showMenu(app);
 
                 default:
                     System.out.println("That is not a valid option");
