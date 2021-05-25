@@ -3,9 +3,9 @@ package model.user;
 public class Courier extends Account{
     private int commissionPerOrder;
 
-    public Courier(String username, String email, String sector, String password) {
+    public Courier(String username, String email, String sector, String password, int commissionPerOrder) {
         super(username, email, sector, password);
-        this.commissionPerOrder=0;
+        this.commissionPerOrder=commissionPerOrder;
     }
 
     public int getcommissionPerOrder() {

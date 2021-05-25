@@ -5,7 +5,6 @@ public class Item {
     private int id;
     private String name;
     private double price;
-    private String description;
 
     public Item(String name, double price) {
         current_id += 1;
@@ -56,11 +55,4 @@ public class Item {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

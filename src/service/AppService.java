@@ -110,7 +110,7 @@ public class AppService {
         System.out.println("Sector :");
         String sector = scanner.next();
 
-        Courier courier = new Courier(username,email,sector,password);
+        Courier courier = new Courier(username,email,sector,password, 0);
         app.getCouriers().add(courier);
     }
 

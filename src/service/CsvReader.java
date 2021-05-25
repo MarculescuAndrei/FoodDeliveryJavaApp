@@ -71,7 +71,7 @@ public class CsvReader {
             String email = crrs[1];
             String sector = crrs[2];
             String password = crrs[3];
-            couriers.add(new Courier(username, email, sector, password));
+            couriers.add(new Courier(username, email, sector, password, 0));
             line = bufferedReader.readLine();
         }
         return couriers;

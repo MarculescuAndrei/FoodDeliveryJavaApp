@@ -1,6 +1,6 @@
 package model.user;
 
-public abstract class Account {
+public class Account {
     protected static int current_id=0;
     protected int id;
     protected String username;
