@@ -1,0 +1,30 @@
+CREATE TABLE `accounts` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(255),
+  `email` varchar(255),
+  `password` varchar(255),
+  `sector` varchar(255)
+);
+
+CREATE TABLE `customers` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(255),
+  `email` varchar(255),
+  `password` varchar(255),
+  `sector` varchar(255)
+);
+
+CREATE TABLE `couriers` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(255),
+  `email` varchar(255),
+  `password` varchar(255),
+  `sector` varchar(255),
+  `commissionperorder` int
+);
+
+CREATE TABLE `items` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255),
+  `price` int
+);
